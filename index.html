@@ -1,0 +1,543 @@
+<html>
+<style>
+	body {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.title, .subtitle {
+		text-align: center;
+	}
+
+	h3 {
+		text-indent: 30px;
+	}
+	
+	h4 {
+		text-indent: 60px;
+	}
+	
+	ul {
+		list-style-type: "- "
+	}
+	
+	ul.terms, ul.toc {
+		list-style-type: none;
+		padding-left: 0;
+	}
+	
+	ul.toc {
+		margin-top: 0;
+	}
+	
+	.toc-lvl2 {
+		padding-left: 10px;
+	}
+	
+	.toc-lvl3 {
+		padding-left: 20px;
+	}
+	
+	.toc-header {
+		margin-bottom: 0;
+	}
+</style>
+<body>
+<h1 class="title">Smash Up Rules Compilation</h1>
+<p class="subtitle">Last Updated: 2015-12-30 (Up to Half the Battle's preview rulebook)</p>
+
+<h2 class="toc-header">Table of Content</h2>
+<ul class="toc">
+<li><a href="#setup">Setup</a></li>
+<li><a class="toc-lvl2" href="#formal">Kickin' It Queensberry</a></li>
+<li><a class="toc-lvl2" href="#sameFaction">Duplicating Factions</a></li>
+<li><a href="#phases">The Phases of a Turn</a></li>
+<li><a class="toc-lvl2" href="#phase1">1. Start Turn</a></li>
+<li><a class="toc-lvl2" href="#phase2">2. Play Cards</a></li>
+<li><a class="toc-lvl2" href="#phase3">3. Score Bases</a></li>
+<li><a class="toc-lvl2" href="#phase4">4. Draw 2 Cards</a></li>
+<li><a class="toc-lvl2" href="#phase5">5. End Turn</a></li>
+<li><a href="#resolve">Resolving Cards and Abilities</a></li>
+<li><a class="toc-lvl2" href="#cro">Card Resolution Order</a></li>
+<li><a href="#score">The Big Score</a></li>
+<li><a class="toc-lvl2" href="#mefirst">Me First!</a></li>
+<li><a class="toc-lvl2" href="#awardingVP">Awarding VP</a></li>
+<li><a class="toc-lvl2" href="#untanglingTies">Untangling Ties</a></li>
+<li><a class="toc-lvl2" href="#corner">Back to Your Corners</a></li>
+<li><a class="toc-lvl2" href="#scoringOrder">Scoring Order</a></li>
+<li><a class="toc-lvl2" href="#declaringvictory">Declaring Victory</a></li>
+<li><a href="#moarRules">More Rules and New Rules</a></li>
+<li><a class="toc-lvl2" href="#attachment">Attachments</a></li>
+<li><a class="toc-lvl2" href="#burying">Burying</a></li>
+<li><a class="toc-lvl2" href="#offTop">Cards off the Top of the Deck</a></li>
+<li><a class="toc-lvl2" href="#duel">Duels</a></li>
+<li><a class="toc-lvl2" href="#fusion">Fusions</a></li>
+<li><a class="toc-lvl2" href="#madness">The Madness Deck</a></li>
+<li><a class="toc-lvl3" href="#madnessScore">Madness and the Final Score</a></li>
+<li><a class="toc-lvl2" href="#monster">Monsters and Treasures</a></li>
+<li><a class="toc-lvl3" href="#monsterBase">Monsters and Bases</a></li>
+<li><a class="toc-lvl3" href="#lootMonster">Getting Loot from a Monster</a></li>
+<li><a class="toc-lvl3" href="#lootBase">Getting Loot from a Base that Scored</a></li>
+<li><a class="toc-lvl2" href="#nonMinionsGrantPower">Non-Minions that Grant Power</a></li>
+<li><a class="toc-lvl2" href="#powerCounter">Power Counters</a></li>
+<li><a class="toc-lvl2" href="#stasis">Stasis</a></li>
+<li><a class="toc-lvl2" href="#stored">Stored Cards</a></li>
+<li><a class="toc-lvl2" href="#swap">Swapping</a></li>
+<li><a class="toc-lvl2" href="#titan">Titans</a></li>
+<li><a class="toc-lvl3" href="#titanClash">Clash of the Titans</a></li>
+<li><a href="#term">Game Terms and Restrictions</a></li>
+<li><a href="#detailedRules">Detailed Rules for Cards, Abilities, and Other Wackiness</a></li>
+<li><a class="toc-lvl2" href="#calcbp">Calculating Values for Breakpoints or Power</a></li>
+<li><a class="toc-lvl2" href="#cancel">Canceling or Preventing Effects</a></li>
+<li><a class="toc-lvl2" href="#conflict">Conflicting Text & Timing</a></li>
+<li><a class="toc-lvl2" href="#dds">Decks, Discards, and Searches</a></li>
+<li><a class="toc-lvl2" href="#extra">Extra Cards</a></li>
+<li><a class="toc-lvl2" href="#inAndOut">In and Out of Play</a></li>
+<li><a class="toc-lvl2" href="#multipleEffect">Multiple Effects</a></li>
+<li><a class="toc-lvl2" href="#triggered">Triggered and Tagged Abilities</a></li>
+<li><a class="toc-lvl2" href="#usingAbilities">Using Card Abilities</a></li>
+<li><a href="#bigBase">Big Base Playing Mode</a></li>
+</ul>
+
+<h2 id="setup">Setup</h2>
+<p>Each player selects two different factions to play with, and is considered the owner of the cards they choose for gameplay purposes. Shuffle together your two factions to make a 40-card deck. If your factions have any titans, place them near your deck (see <a href="#titan">Titans</a>.)</p>
+<p>Next, grab just the base cards from the sets the chosen factions came from. For example, if you have Viking Explorers vs. Itty Critter Vigilantes, take the bases from Oops You Did It Again, What Were We Thinking, Big in Japan, and That '70s Expansion to make your base deck. Shuffle the base cards together.</p>
+<p>If any of the sets used in your game has extra decks (e.g. Madness for Cthulhu, Monsters and Treasure for Munchkin), shuffle those decks and set them out too. (Okay, the Madness deck doesn't need to be shuffled.)</p>
+<p>Draw one base per player, plus one (e.g. four bases for three players), and place them face up in the middle of the table. If any of the bases needs monsters, add them now (see <a href="#monster">Monsters and Treasures</a>).</p>
+<p>If you have base mats, set out one for each player, plus one (e.g. four mats for three players), all facing the same direction, and with enough space between them for cards played around their sides. Each player chooses a side they will play their cards on: A, B, C, or D. The first player doesn't have to be player A.</p>
+<p>Instead of placing bases in the middle of the table, place them on the base mats. After each time a base is placed, place its tokens on its number line: the Breakpoint Token on the number of the base's breakpoint, and the Total Power Token on its initial total power, usually 0.</p>
+<p><b>During play,</b> if you play with base mats, adjust a base's Total Power Token each time the total power on it changes, e.g. as minions and power counters come and go, and as abilities that affect power trigger and expire. Also adjust the Breakpoint Token if abilities change a base's breakpoint. These tokens make it easy to tell how close each base is to breaking and scoring.</p>
+<p>Set out the VP tokens on the table. If any chosen factions need counters (e.g. stasis counters, power counters), set them out as well.</p>
+<p>Each player draws a hand of five cards from their deck. If you have no minions or fusions in your opening hand, you may show it, draw a new hand, and shuffle the old hand into your deck; you must keep the second hand.</p>
+<p>If you want to play with the Big Base, see <a href="#bigBase">Big Base Playing Mode</a> for additional setup and rules.
+<p>Choose who goes first as you wish. Play continues clockwise.</p>
+
+<h3 id="formal">Kickin' It Queensberry</h3>
+<p>For formal play, put at least 2 factions per player in the middle of the table. Randomly determine who goes first. The first player chooses one faction. Choice continues clockwise. When everyone has chosen one faction, the last player chooses a second faction. Choice continues in reverse order.</p>
+
+<h3 id="sameFaction">Duplicating Factions</h3>
+<p>Does more than one person want to play a faction? Great! Combine two identical sets of Smash Up so people can draft and play the same factions against one another. You can't put two of the same faction together though! Just use one set of bases when combining.</p>
+
+
+<h2 id="phases">The Phases of a Turn</h2>
+<h3 id="phase1">1. Start Turn</h3>
+<p>This is the time for all things that happen "at the start of your turn", both abilities, and rules like removing stasis counters or uncovering. They are resolved in whatever order the current player wants. Abilities that expire at the start of your turn do so before any start-of-turn effects.</p>
+
+<h3 id="phase2">2. Play Cards</h3>
+<p>On your turn you may play one minion and/or one action for free. There might also be abilities on cards you've already played that you can activate during this phase. All of this can be done in any order. You don't have to play any cards. To play titans, see <a href="#titan">Titans</a>.</p>
+<b>Minions</b>
+<p>To play a minion, choose a base and put the minion card beside it, facing toward you. Then do what the card says. A minion's main job is to add its power to its controller's total power on a base.</p>
+<b>Actions</b>
+<p>To play an action, show the card and do what it says. Then if the card doesn't tell you what to do with it – e.g. play it on a base or on a minion, place it in a hand or in a deck or in stasis, or bury it – discard it after resolving its ability.</p>
+<b>Fusions</b>
+<p>A fusion is played either as a minion or as an action. See <a href="#fusion">Fusions</a> for more information.</p>
+<b>Abilities</b>
+<p>Each set of instructions on a card is called an ability. Most cards only have one, but some have more. Abilities come in different types:</p>
+<p>Unless an ability has one of the labels below, it is an <strong>On-play</strong> ability and is resolved immediately after the card is played – but not after it is moved. Any ability that says "on your turn" can only be used during your Play Cards phase.</p>
+<p>See <a href="#term">Game Terms and Restrictions</a> for more info about each type.</p>
+<p><strong>Ongoing</strong>: Ongoing abilities either a) are always taking effect as long as they are in play and any conditions are met – which may start once the card is in play – or b) they are resolved after a particular trigger.</p>
+<p><strong>Special</strong>: Special abilities are resolved at unusual times, as the card itself explains.</p>
+<p><strong>Talent</strong>: A Talent can be activated once during each of your turns, during the Play Cards phase only.</p>
+<p>Base abilities are handled differently. They act like Ongoing and/or Special abilities, but they have no label and are treated by faction cards as if they have no ability type. 
+</p>
+
+<h3 id="phase3">3. Score Bases</h3>
+<p>After you are done playing cards, check to see whether any bases are ready to score. If any are ready, you must start scoring. See <a href="#score">The Big Score</a> for more info.</p>
+<p>This is the only time when bases are scored. If a base's power meets or exceeds its breakpoint at other points of a turn, you still have to wait until the next Score Bases phase to do anything about it.</p>
+
+<h3 id="phase4">4. Draw 2 Cards</h3>
+<p>Do what it says: draw two cards from your deck.</p>
+<p>If your hand is empty at other times of the game, you don't get an automatic draw; you have to wait for this phase of your turn.</p>
+<p>If a deck is empty when you need to draw, search for, reveal, or look at cards from it, shuffle its discard pile to make a new deck, and keep going.</p>
+<p><strong>Exception</strong>: If you are searching the deck for a card, or revealing cards until a condition is fulfilled (e.g. until an action is revealed), then if the deck runs out after you have started, stop searching or revealing and move on with the rest of the ability.</p>
+<p>After drawing, if you have more than 10 cards in your hand, discard down to 10. If your hand is bigger than 10 in your End Turn phase or at other times, that's OK: you wait until now to discard down.</p>
+
+<h3 id="phase5">5. End Turn</h3>
+<p>Just like the start, there's a phase for the end of the turn. Things that <em>happen</em> now (like destroying a minion or drawing a card) happen first; if there is more than one, see <a href="#mefirst">Me First!</a> to resolve the order. After that, all abilities that expire now (like "+1 power until the end of the turn") expire at the same time.</p>
+<p>Finally, check to see if any players have 15 or more VPs. If so, see <a href="#declaringvictory">Declaring Victory</a>. Otherwise the turn is over and play passes to the player on the left.</p>
+<p>If a player has 15 or more VPs in the middle of a turn, the game does not end yet, but continues until playing, scoring, and drawing are completed for that turn. It is only in the End Turn phase that a winner is determined.</p>
+
+<h2 id="resolve">Resolving Cards and Abilities</h2>
+<p>Sometimes it can be difficult to decide what order to do things in. For example, if more than one player has a card that triggers before a base scores, which one goes first? Let's lay it all out.</p>
+<p>When you play a card, first resolve any applicable always-on abilities on cards in play (e.g. "Minions here have +1 power"). (These abilities include Ongoing and base abilities that have no trigger – though they may have conditions – and those that say "until X do Y".) Then resolve the card's on-play ability if it has one, then any always-on Ongoing ability it has (e.g. "This minion has +1 power"). </p>
+<p>If an ability has multiple effects, they are resolved in the order they appear on the card.
+	<ul>
+		<li>If the effects are ordered in a dependent way – e.g. "If X, Y", "Do X to do Y", "You may do X; if you do, do Y", "When X, Y", "Each time X, Y", "After X, Y" – then if X is not resolved for any reason, Y is not resolved. (For example, if for Sonic Shockwave you target Hawkeye on Avengers Tower, you do not gain 1VP since Hawkeye isn't destroyed.)</li>
+		<li>If the effects are ordered in an independent way – e.g. "Do X and then do Y", "Do X. Do Y" – then later effects are resolved even if the earlier effects cannot be. (For example, if you play Modular Tech and have no actions on base in play you still may play an extra action.)</li>
+	</ul>
+</p>
+<p>After an ability is resolved, all abilities that are triggered by its effects are resolved. After a card is played, all abilities triggered by playing a card, or whose conditions are met by the card's presence, are resolved along with those triggered by the card's abilities. If more than one ability is triggered, see <a href="#mefirst">Me First!</a> to figure out their order.</p>
+<p>Abilities can trigger at one point of time but take effect later, even if their triggering conditions are no longer true. E.g. cards that say "after X do Y" trigger when X starts, but don't take effect until after X ends.</p>
+<p>For an ability to respond to a trigger, its card needs to be in play when the triggering event happens. (For example, if you use Nick Fury to play Maria Hill, she doesn't get +1 from the play of Fury.) It also needs to be in play when the event finishes resolving, unless the trigger itself make the card go out of play. (If you use Red Skull's ability on itself you still get to draw cards.)</p>
+
+<h3 id="cro">Card Resolution Order</h3>
+<p>When you play a card (C):
+	<ol>
+		<li>Place C on a base or on a minion if appropriate.</li>
+		<li>Resolve any triggerless, always-on Ongoing abilities on cards in play that apply to C.</li>
+		<li>Resolve C's on-play ability if it has one.</li>
+		<li>Resolve any triggerless Ongoing ability C has.</li>
+		<li>Resolve mandatory abilities on cards in play that are triggered by C's being played or by any of its abilities.</li>
+		<li>Resolve optional abilities on cards in play, and abilities in hand, that are triggered by C's being played or by any of its abilities.</li>
+		<li>Place C in the discard pile unless it was played on a base or on a minion, or placed itself elsewhere.</li>
+	</ol>
+</p>
+<p>If one card (A) causes another card (B) to be played immediately, B's resolution takes precedence, and the resolution of A pauses until B is finished resolving. (For example, if Gecko Rap swaps in a new minion, that minion's play is completely resolved before Gecko Rap goes on to play an extra action or place a power counter.)</p>
+
+<h2 id="score">The Big Score</h2>
+<p>Each minion on a base adds its power to the total power on the base. During the Score Bases phase of any turn, if the total power on a base equals or exceeds that base's breakpoint (see <a href="#calcbp">Calculating Values for Breakpoints or Power</a>), the base will score. If more than one base is ready to score, the player whose turn it is decides which one to score first. You cannot refuse to score an eligible base.</p>
+<p>After a base has been chosen to score, abilities that happen <strong>"before"</strong> the base scores are triggered and resolved (e.g. Funkman).</p>
+<p>Once a base has been chosen to score, nothing can stop it. Even if the total power is reduced to below the base's breakpoint, you still keep scoring.</p>
+<p>For example, before a base scores, one player plays Widow's Bite to give all other players' minions there -1 power each. Even if the total power goes below its breakpoint, the base still scores.</p>
+<p>If a scoring base leaves play before VPs are awarded (usually because it is replaced by another base), stop scoring it immediately, since the base that was scoring is now gone. Then evaluate the bases on the table to see if any are eligible to score – which may include the replacement base!</p>
+
+<h3 id="mefirst">Me First!</h3>
+<p>When resolving abilities while responding to any trigger, including scoring a base, you first resolve mandatory rules like removing stasis counters (see <a href="#stasis">Stasis</a>) and abilities, which include abilities of cards in play that do not say "may" (e.g. Commandbro), or that say "each player may" (e.g. Brood Hive). They are resolved in the order chosen by the current player.</p>
+<p>Then you resolve optional abilities – which includes cards in play that say a single player "may" do something (e.g. Kickboxbro), as well as all triggered Special abilities in the hand (e.g. Resurgence) – along with optional rule effects like uncovering buried cards. If more than one player wants to use an optional ability, then each player, starting with the current player and going clockwise, uses one such ability (in-play or from the hand) or passes. You can use an ability each time it comes around to you, and you can use one after passing, but once all players pass in sequence, that ends it.</p>
+<p>If, while resolving optional abilities, a card with a mandatory Ongoing or Special ability enters play, it is resolved immediately before continuing with the next player.</p>
+
+<h3 id="awardingVP">Awarding VP</h3>
+<p>The players with the highest, 2nd highest, and 3rd highest power on a base are the winner, runner up, and third place! They get VPs equal to the 1st, 2nd and 3rd number on the base card, respectively.</p>
+<p>Anyone with the 4th highest power or lower gets nothing. If there are fewer than 3 players on a base, no one gets the VPs for the unclaimed spots. Dispense VP tokens in the appropriate amounts to everyone who scored. Abilities that happen <strong>"when"</strong> a base scores may change how this happens, or add to it (e.g. Building Rooftop). You must have at least one minion or 1 power on a base to get VPs. A minion with 0 power can earn VPs if zero is one of the three highest power totals (e.g. a solitary minion with Oogie Boogie on it).</p>
+<p>If there are monsters on a base when it scores, see <a href="#lootBase">Getting Loot from a Base that Scored</a>.</p>
+
+<h3 id="untanglingTies">Untangling Ties</h3>
+<p>If players are tied on a base, all involved players get points for the best position they tied for. So, if three players had 10, 10, and 5 power on a base when it scores, the winners with 10 power each get first place points! The player with 5 power then gets third place, not second. If two players tie for runner up, no one gets third place.</p>
+<p>If players tie for use of a base's ability (such as the one on Ninja Dojo), they each get to use it, starting with the current player and going clockwise. If using it twice doesn't make sense (e.g. choosing the next base), then only the first player gets to use it.</p>
+<p>If a card refers to a superlative, e.g. "the highest power here", then ties for that superlative all count.</p>
+
+<h3 id="corner">Back to Your Corners</h3>
+<p>After awarding points, players can use abilities that happen <strong>"after"</strong> a base scores, in the same order described under <a href="#mefirst">Me First!</a> (e.g. Now You Know: Bullying). They are carried out immediately if possible, but they may need to wait until conditions allow it (e.g. if it affects what happens to cards on the base).</p>
+<p>Then all cards still on that base go to their respective discard piles simultaneously (regular minions and actions go to the piles of their owners, even if they were controlled by other players, or buried; monster and treasure cards go to their own piles; and titans are placed near their owners' decks). Going to the discard pile after scoring is not the same as being destroyed; however, it still might trigger other abilities (e.g. Lion Cub, Mufasa).</p>
+<p>Put the scored base on the base discard pile. Replace it with the top card of the base deck, adding monsters if necessary. If the base deck or monster deck has run out, shuffle the respective discard pile to make a new deck. Check to see if another base is ready to be scored. If so, score it too, the same way. Since scoring a base can (and often does) change conditions on other bases, you always re-evaluate whether any bases are ready to score <em>after</em> completely finishing a base's scoring process.</p>
+
+<h3 id="scoringOrder">Scoring Order</h3>
+<ol>
+	<li>Bases are checked to see if any are ready to score. If none are, go to the Draw 2 Cards phase.
+	<li>The current player chooses a base that is ready.</li>
+	<li>Players may play and/or invoke any "Before scoring" abilities.</li>
+	<li>VPs are awarded according to the current power totals. "When scoring" abilities may trigger now or in the next step. </li>
+	<li>Treasures from any monsters on the base are awarded.</li>
+	<li>Players may play and/or invoke any "After scoring" abilities. This may affect steps 7-9.</li>
+	<li>All cards on the base are discarded.</li>
+	<li>The base is discarded.</li>
+	<li>A new base is chosen to replace it. Monsters are placed on it as required.</li>
+	<li>Go to step 1.</li>
+</ol>
+
+<h3 id="declaringvictory">Declaring Victory</h3>
+<p>Check for a game winner at the end of each turn: if at least one person has 15 or more VPs, the player with the most VPs wins! But if there is a tie for the most, everyone keeps playing turns until there is no tie.</p>
+<p>Once one player gets a winning VP total, you should still play until the end of the turn – unless everyone agrees no one can catch up.</p>
+<p>Games played with the Madness deck have special rules for determining the winner; see <a href="#madnessScore">Madness and the Final Score</a>.</p>
+
+<h2 id="moarRules">More Rules and New Rules</h2>
+<p>Every Smash Up set has bases, minions, and actions, but there are several other game components and mechanics that only appear in some of the sets.</p>
+<h3 id="attachment">Attachments</h3>
+<p>A card's attachments are counters on it and other cards on it or under it.</p>
+<p>Cards that say, "play on a base/minion" stay there until another card relocates them or the base or minion it is on leaves play.</p>
+<p>If a card is moved or placed into stasis, its attachments stay with it. If a card is swapped, its attachments stay in place and are transferred to the card it swaps with. A card's attachments are discarded if it leaves play in any other way (i.e. destroyed, shuffled into or placed on a deck, returned to the hand, or discarded after its base scores) or if it is buried or stored.</p>
+<p>If an ability says that a minion or base is not affected by cards or actions, any such cards that are already attached to the minion or base are immediately destroyed, since having a card attached is an effect. Similarly, if you try to play such a card on a minion or base protected from its effects, that card is discarded instead.</p>
+<p>An action played on a minion is controlled by the player who played the action, not by the controller of the minion. Changing control of a minion does not affect the control of actions on it, and vice versa.</p>
+<p>You can attach two identical actions to the same minion.</p>
+<p>Only cards that say, "Play on a base or minion" are considered played on that base/minion. Actions on minions are not on the base. Standard actions that affect a base or minion but don't get played on it (e.g. Rampage) are not on the base or minion.</p>
+
+<h3 id="burying">Burying</h3>
+<p><b>How to bury</b>: To bury a card you place it face down beside a base, facing you. You don't show it to others unless the card says to bury itself. You may only bury a card if an ability allows it.</p>
+<p><b>Status</b>: A buried card is not affected by abilities that target minions, actions, or any other card type. They are affected by abilities that target "cards". A buried card is controlled by the player who buried it, and its controller is considered its owner until it is uncovered or discarded. Players may look at buried cards they control at any time; but they may only look at them one at a time and may not mix them up. A buried card's abilities may not be triggered until after it is uncovered.</p>
+<p><b>Uncovering</b>: Each player may uncover one of their buried cards at the start of their turn. A player may also uncover a card when an ability allows it. When a buried card is uncovered, its controller immediately plays it as an extra card. It is played either on the same base, or on a minion on that base, or simply resolved and discarded, as appropriate. It is resolved just as if it were played from the hand. If circumstances make playing it impossible (e.g. it's a card that is only played before a base scores), it is discarded instead. When a card is uncovered or re-buried (as Mummies do), any counters or cards on it are discarded first. Uncovered cards may not be immediately reburied.</p>
+<p><b>Scoring</b>: Buried cards do not themselves have power, nor the presence to help break or win a base. After a base scores or leaves play for any reason, buried cards still on it go to their owners' discard piles. Madness cards that are buried at the end of the game still count against their controller.</p>
+
+<h3 id="offTop">Cards off the Top of the Deck</h3>
+<p> "Play/Draw X off the top of your deck" means you reveal cards from the top of your deck until you reveal a card of type X, and then play or draw it; if you are told to play or draw N Xs you do the procedure N times. After the Xs are played or drawn, if there are any unused revealed cards you shuffle them into your deck; before then those cards are not considered in play or part of any deck or discard pile.</p>
+<p>If the deck is empty before you start revealing cards, shuffle your discard pile to make a new deck. But if the deck runs out while you are revealing, you stop revealing and can only play or draw what you have already revealed. (This is also true for other cards that reveal from the deck until finding something, like Watson) If the X that you reveal has prerequisites for play that are not met (e.g. Shoggoth), it is discarded instead.</p>
+<p>"If this card was played off the top of a deck" means if this card was among a group of cards revealed from the top of a deck and then played. It does not have to have been the very top card for it to be true. There are existing cards that help meet that condition without saying "play off the top of a deck", such as Hoverbot, Secret Volcano Headquarters, Teaching Power, Moon Dumpster, and Raiding Party.</p>
+
+<h3 id="duel">Duels</h3>
+<p><b>Basics</b>: When two minions duel, their controllers may each place a card from their hand on the table face down, and then each reveals their card (if any), starting with the challenger. If it is an action it is played normally, otherwise it is returned to the hand. After the dueling cards are resolved, the minion with the higher power is determined to be the winner; in case of ties, both sides get all the effects of the duel. The benefits of winning, or the harm of losing, are specified by the card that starts the duel.</p>
+<p><b>Details</b>: Placing a dueling card on the table is optional, and the decision to place one is first made by the challenger.</p>
+<p>You may place any card from your hand for a duel, including actions that affect minions outside the duel, or even minions that are just returned to the hand.</p>
+<p>While on the table, dueling cards are not considered part of the hand, deck or discard pile, are not considered in play, and cannot be targeted by any ability.</p>
+<p>Two duels may not happen at the same time, so if any ability that allows a duel is triggered during another duel, that part of the ability is ignored.</p>
+<p>After a duel's actions are resolved, if the two minions of the duel are not together on the same base as each other, the duel stops without resolution. However, changing control of either or both minions does not stop the duel.</p>
+<p>During a duel no other cards may be played or invoked, unless they are allowed by the duel's actions (or by the cards allowed by the actions, etc.) or they are triggered by the duel or the cards involved in it.</p>
+<p>Being in a duel does not by itself count as affecting a minion, but the duel's consequences may affect it.</p>
+
+<h3 id="fusion">Fusions</h3>
+<p>A fusion card is a new type of card. It is treated like both a minion and an action, except when played; then it is declared to be one or the other, and treated as that type. On a base it is only treated as a minion. It has two abilities, labeled "Minion:" and "Action:".</p>
+<p><b>When not in play.</b> Fusions in the hand, deck, discard pile, or stored or buried, are treated as both minions and actions. When you search for, reveal, or discard a minion, or draw or play one off the top of the deck, a fusion counts as a minion; when for an action, a fusion counts as an action. You cannot discard your opening hand if it has fusions in it, since they count as minions. If played in a duel, since a fusion counts as an action it is treated and played as an action.</p>
+<p><b>When playing.</b> When you play a fusion, announce whether you are playing it as a minion or as an action (you cannot choose both), play it normally as that type, and ignore its text for the other type. When played as a minion, it is placed near a base as normal, and only its Minion ability is resolved. When played as an action, only its Action ability is resolved, and then it is discarded if it's a standard action ability – which all in this set are.</p>
+<p>When a fusion is played as a minion: a) it triggers abilities that trigger from playing minions; b) its Minion ability is blocked by cards that block minions' abilities; and c) its Minion ability can be copied by abilities that copy minions' abilities. The same is true if we replace "minion" above with "action".</p>
+<p>You may always play a fusion as a regular card; you can even play two fusions as regular cards in the same turn, as long as one is played as a minion and the other as an action. </p>
+<p>You may play a fusion as an extra minion or action, as long as it matches the description of the card an ability lets you play. Examples: If an ability lets you play an extra action, you cannot use it to play a fusion as a minion, or vice versa. If an ability lets you play a minion of power 2 or less, you cannot play a fusion of power 3 or more. You cannot search for or play a fusion as an action on a base or minion, because no fusion Action ability in this set can do that. If an ability lets you play an extra card from the discard pile, you may play a fusion from the discard pile, but only as the specified type.</p>
+<p><b>When in play.</b> A fusion on a base is always treated as a minion. Its power adds to the player and base totals as normal. Its Action ability is ignored, but its Minion abilities are active as normal. It is affected by abilities that affect minions. Cards that affect actions never affect fusions on bases. Fusions stored, buried, or in stasis have their type reset and may be played as either type.</p>
+
+<h3 id="madness">The Madness Deck</h3>
+<p>This is a set of 30 identical action cards. Keep the Madness deck face up (since all cards are identical) and separate from all other decks. Players cannot draw a card from the Madness deck, or return a Madness card to it, unless a card's ability specifically allows it. Once a Madness card is in a player's hand, discard pile, or deck, it functions exactly like any other action card until the end of the game. It may be played for its effects and it is affected by any cards that would affect an action. If the Madness deck is out of cards, ignore any instructions to draw a Madness card until one or more Madness cards return to the deck.</p>
+<p>The current controller of each Madness card is treated as its owner as well. When a Madness card leaves play, it goes to its controller's discard pile rather than to the Madness deck. When a Madness card returns to the Madness deck, the player ceases to control it.</p>
+
+<h4 id="madnessScore">Madness and the Final Score</h4>
+<p>When the game ends, and one player is in the lead with 15 VPs or more, players count the total number of Madness cards in their hands, decks, and discard piles, or that are buried, in stasis, or in storage. Each player then loses 1 VP for every 2 Madness cards that they have. The player with the highest modified VPs total then wins. In case of ties, the player with the fewest Madness cards wins. Further ties share the win!</p>
+<p>For example, John has 15 VPs and 5 Madness cards; he gets -2 VPs for a final total of 13 VPs. Mary has 14 VPs and 3 Madness cards, giving her a -1 VP penalty. Her modified total is 13 VPs, but she has fewer Madness cards, so she wins the tie. Finally, Chris has 13 VPs and no Madness cards. Chris, with the fewest Madness cards, wins the game, and John comes in last place!</p>
+
+<h3 id="monster">Monsters and Treasures</h3>
+<p>Monsters and treasures are special types of minion and action cards. They each have their own deck and discard pile, set to the side for any player to use when necessary. Players cannot draw from these decks unless allowed in these rules or by a card's ability.</p>
+<p>Monsters are treated as normal minions, and treasures are treated as normal actions or minions, in all ways except as defined below.</p>
+<p>Monsters and treasures have no owner or faction, therefore cards that refer to a minion's owner do not apply to monsters. When a monster or treasure card leaves play, it always goes to the corresponding discard pile, regardless of card text to the contrary.</p>
+<p>Monsters are not played from players' hands but directly from the top of the monster deck. They can only be played when a game effect specifically says to play a monster. Playing a monster does not count against a player's limit of one minion per turn, nor does it count as an extra minion. Playing a monster does not give a player control of it; however, other cards may allow a player to take control of a monster in play.</p>
+<p>Monsters are not opponents or "other players" to anyone, but each player is "another player" to monsters.</p>
+<p>Treasures are special awards gained either by defeating monsters, or by special card effects. Although they have no owner or faction, they do have a controller as normal.</p>
+
+<h4 id="monsterBase">Monsters and Bases</h4>
+<p>Bases in Munchkin have a monster number. Whenever such a base enters play, draw that many monsters from the monster deck and play them on the base. To save table space, you may overlap the monster cards so only their power and abilities show. Monsters played on new bases are not considered played by any player. Monsters' abilities trigger when they are played just as with normal minions.</p>
+<p>Monsters do not count against the breakpoint of the base they are on. Instead, they ADD to the breakpoint of the base, making it harder to score. However, if someone takes control of a monster, it stops adding to the base's breakpoint and acts as a normal minion of that player.</p>
+
+<h4 id="lootMonster">Getting Loot from a Monster</h4>
+<p>Monsters have a treasure number. If a monster is destroyed by a card effect, the player who controls the effect that destroyed it draws that many treasure cards and places them in his or her hand.</p>
+
+<h4 id="lootBase">Getting Loot from a Base that Scored</h4>
+<p>After awarding VPs for a base, add the treasure numbers of all the monsters that are still on the base and reveal that many cards from the treasure deck. Shuffle the treasure discard pile if needed. Players take turns choosing one of the revealed cards and adding it to their hand. To be eligible to claim a treasure, a player must either control a minion at that base or have at least 1 power there by virtue of some other effect. All qualifying players are included in treasure selection, not just the top three.</p>
+<p>When choosing treasures, start with the base's winner and proceed by the decreasing amount of power present on the base. Priority for breaking ties starts with the current player and going clockwise. Continue selecting (restarting with the winner if there are more treasures than players) until all treasures have been claimed.</p>
+<p><b>Example</b>: A base scores. The monsters still on the base have a total treasure value of 5. Alan has a bunch of minions on the base, and Beth has one minion with a power of zero. The players reveal a total of 5 cards from the treasure deck. Alan, who had the highest total power, chooses one of the cards. Beth chooses second, then Alan chooses another, etc. In the end, Alan gets the first, third, and fifth choices, and Beth gets second and fourth. Chris had neither minions nor power on the base, and thus does not get any treasure.</p>
+
+<h3 id="nonMinionsGrantPower">Non-Minions that Grant Power</h3>
+<p>Some actions have inherent power, and some bases grant power. This power counts both toward breaking the base and toward earning VP rewards, even if the player has no minions present there.</p>
+
+<h3 id="powerCounter">Power Counters</h3>
+<p>Note: Also called "+1 power counters" or "+1 power tokens" on cards.</p>
+<p>Power counters give enduring power to minions. Use your VP tokens as power counters when they are on cards in play. Some sets like Disney Edition have VP tokens with a back side that says "+1" or "+3" to denote they're being used as power counters. Power counters can only be placed on cards, transferred between cards, and removed from cards when an ability says to do so. When a card leaves play, discard all power counters on it.</p>
+<p>Each power counter on a minion increases the minion's power by the number on it, for as long as it is on that minion. For example, a 2-power minion with two +1 power counters on it is treated as a 4-power minion. If a power counter is transferred, the counter stops affecting the card it used to be on, and starts affecting the new one.</p>
+<p>Do not use power counters to stand for power directly granted by abilities, whether for a limited time (e.g. Zazu) or unlimited (e.g. Family Sword). Do not take power counters off if an ability reduces a minion's power (e.g. Monster Garland). Those abilities' power changes are calculated in addition to printed power and power counters.</p>
+<p>Because power counters affect the minions they are on, abilities that protect minions from effects also protect against placing power counters on them, as well as transferring or removing them.</p>
+<p>As with VP tokens, power counters are treated like money: a +3 counter can be exchanged for three +1 counters, and vice versa.</p>
+<p>Abilities triggered by the presence of +1 power counters are also triggered by the presence of +3 counters. Exchanging one size of counters for another does not count as placing a counter and does not trigger any abilities.</p>
+<p>See <a href="#titan">Titans</a> for how power counters work with titans. Power counters on actions, bases, or buried cards have no effect unless a card says otherwise.</p>
+
+<h3 id="stasis">Stasis</h3>
+<p>Stasis counters track the amount of time a card spends in stasis, after which the card is played, and/or other effects may happen. If you run out of stasis counters, use any other items you wish as additional counters. Stasis counters do not count as any other token used in the game, and none of those count as stasis counters.</p>
+<p><b>Being in stasis</b>: You only place stasis counters on a card when an ability says you can; doing so places the card in stasis. Cards in stasis are placed face up in front of their owner. They are considered in play, but: 1) they are not on any base or part of any hand, deck, or discard pile; 2) their abilities do not work unless they refer to stasis; and 3) they may not be affected by, or chosen as the target of, any ability that does not refer to stasis; 4) they may not be played or leave stasis except as described below. Their presence on the table may influence some abilities (e.g. Microbot Alpha, Red Riding Hood), and their power and abilities can be copied by other cards. Madness cards in stasis at the end of the game still count against your final score.</p>
+<p><b>Leaving stasis</b>: At the start of your turn, you must remove one stasis counter from each of your cards in stasis. You may also remove (or add) stasis counters when an ability says you can. If a card in stasis has no stasis counters on it, during your Play Cards phase you may play it as an extra card, at which point it leaves stasis. When you play the card, follow any instructions it has for leaving stasis, and then discard the card unless it tells you otherwise (as Sidelined Girlfriend does). If it has no instructions for leaving stasis, just play it normally as an extra card. Cards leaving stasis may not immediately re-enter stasis. At the end of each turn, discard all your cards in stasis that have no stasis counters on them; they both leave stasis and leave play.</p>
+
+<h3 id="stored">Stored Cards</h3>
+<p>Some abilities let you store cards by placing them face down under other cards. If the ability has constraints on the card being placed – e.g. "a minion of power 3 or less" or "an action" – you must reveal it before storing it so others can see it meets the requirements. You control the stored cards, and may look at them at any time, returning them to the same place. Other players may count your stored cards, but may not examine them.</p>
+<p>Stored cards are considered in play, but their abilities are not active, and they cannot be affected by abilities that do not mention stored cards.</p>
+<p>Stored cards may only be played when an ability allows it. When a card moves, cards under it move with it. When you take control of a card you also take control of cards stored under it (though not those on it). When a card leaves play, any cards stored under it are discarded unless an ability says otherwise. Madness cards in storage at the end of the game still count against your final score.</p>
+
+<h3 id="swap">Swapping</h3>
+<p>"Swap X and Y" means X and Y trade places. If X and Y are both at a base, move or transfer each of them to the other's spot, transferring all attachments (see <a href="#attachment">Attachments</a>) to each other. If only one of X or Y is at a base, play the other one at its base, transfer all the first one's attachments to it, and place the first one at the other's previous location. If either comes from a deck, the deck is searched for the card, and the deck shuffled afterward.</p>
+<p>All parts of the actual swap – playing/moving/ transferring the swapped cards, and transferring all attachments – happen simultaneously, after which all abilities are resolved normally (see <a href="#resolve">Resolving Cards and Abilities</a>).</p>
+<p>Although permanent things like cards and counters are transferred, temporary things like "+1 power until the end of the turn" do not transfer to the new card. If a card has effects required later in a turn – like changing control or placing it in a hand or deck at the end of the turn – but it is swapped, those required effects do not apply.</p>
+<p>If either card of the swap is immune to its effects, e.g. a minion is not allowed to be moved away, then the entire swap fails. If a base is swapped, all cards on it remain on the new base unless told otherwise.</p>
+
+<h3 id="titan">Titans</h3>
+<p>Titan is a type of card different from minions, actions, or bases. Each titan goes with the published faction indicated on its back, and is meant to be stored with that faction. When you play with one of those factions, you may take its titan as well.</p>
+<p>Titans start the game on the table near their player's draw pile; they are never in the hand, deck or discard pile. You may play your titan on a base using its Special ability, or certain cards (e.g. A Wish for Wings That Work). Playing a titan is optional, but if a card in play lets you play a titan it must be done immediately or not at all. "Instead of your regular minion [or action] play" means instead of the normal minion or action play allowed during your Play Cards phase. Titans are not played as, and do not count as, extra cards.</p>
+<p>If you play a titan, you control it even if you do not own it. You cannot play a titan if you already control a titan in play.</p>
+<p>Titans are not affected by abilities that target "minions" or "actions". But abilities that target "cards" can affect titans and even force them out of play (destroyed, returned, placed, etc.). Titans also leave play if the base they are on leaves play. When a titan leaves play it is set aside near its owner, discarding any counters on it. Titans can come back any time a card allows it.</p>
+<p>Titans do not have power, but they can give power to their controller's total at their base, either through their abilities or through +1 power counters played on them.</p>
+
+<h4 id="titanClash">Clash of the Titans</h4>
+<p>After you play or move a titan to a base that already has a titan, one of them must be removed from play (<strong>exception</strong>: Kaiju Island). The two controllers compare their total power at that base, after resolving any applicable Ongoing abilities though not their Talents. The player with the lesser total removes their titan; in case of ties, the titan that was on the base first wins.</p>
+
+<h2 id="term">Game Terms and Restrictions</h2>
+<p>Specific words are not synonymous no matter how similar they seem. For example, destroy, discard, move, place, play, and return are all different things done with or to cards. This means that a card that cannot be destroyed can still be returned or discarded. In this section we clarify what the specific words mean.</p>
+<ul class="terms">
+<li><b>Action</b>: Any action in play, unless stated otherwise.
+<br>Exception: "Play an action" means one from the hand.</li>
+<li><b>Action [Label]</b>: An Action ability is the part of a fusion's abilities that is resolved if and only if it is played as an action.</li>
+<li><b>Affect</b>: A card is affected if it is moved or transferred, swapped, removed from play (i.e. destroyed, returned, shuffled, or placed), buried or uncovered, changed in actual or counted power or in controller or in name, or if it has an action on it, counters placed on it or removed from it, or abilities cancelled or added. Removing an attached action is not considered to affect the card that it was attached to, even if that indirectly changes the card's power, abilities, etc. Credit for affecting a card goes to the controller of the card that explicitly mandated the effect.
+<br>Exception: If the card specifies a different player to carry out an effect, that player gets the credit.</li>
+<li><b>After</b>: "After X do Y", means that X is completely resolved before Y is done (unless X is "a base scores", see <a href="#corner">Back to Your Corners</a>), and that Y is done right after X, meaning before the current player does some other activity that does not depend on X. (Use common sense and courtesy when applying this rule.) If X does not happen, neither does Y.
+<br>Exception: "After a base scores" means after the VP are awarded, not after the new base is chosen; see <a href="#score">The Big Score</a>.</li>
+<li><b>And/Or</b>: "X and/or Y" means X by itself, or Y by itself, or both X and Y.</li>
+<li><b>Attachments</b>: Anything that is attached to or played on a card, like other cards or power counters.</li>
+<li><b>Before</b>: "Before a base scores" means after a base is chosen to score but before VPs are awarded. "Before the end of the turn" means during the Draw 2 Cards phase.</li>
+<li><b>Bury</b>: This lets you place a card face down on a base. (See <a href="#burying">Burying</a> for details.)</li>
+<li><b>The Box</b>: A card that is put in the box is out of play for the rest of the game. No ability can either prevent going to the box or retrieve a card that is there.</li>
+<li><b>Cancel</b>: Canceling an ability means the ability is treated as if it does not exist. Canceling does not undo previous effects created by the ability.</li>
+<li><b>Character</b>: "Character" is exactly synonymous to the term "minion" in other sets. Everything that refers to a "character" also refers to a "minion" and vice versa.</li>
+<li><b>Control</b>: By default, each card you play is controlled by you. Monsters are controlled by no one unless you explicitly take control of them. If you gain control of a card, it is as if you had played it: minions add to your power total, abilities on the card apply to you and you can use them, etc. Controlling a minion does not mean you control any actions played on it, but their abilities apply normally. When the card leaves play, it goes to the hand, deck, or discard pile of its owner, not its current controller; but monsters and treasures go to their own piles. To "have" a card or power at a base means you control it. "Your" cards are the ones you control.</li>
+<li><b>Destroy</b>: This lets you remove a card that's in play and put it in the discard pile.</li>
+<li><b>Directly</b>: Card X directly affects card Y if X's ability does one of the things listed under "Affect", and Y is a target specified by X.</li>
+<li><b>Directly Increases Power</b>: A card directly increases power if it gives it "+N power", or places or transfers a power counter, or sets the printed power to a higher value. Granting a power-increase Talent (e.g. The Touch), or destroying a negative power card (e.g. Change Into A Gun) are not direct power increases.</li>
+<li><b>Discard</b>: This lets you put a card that is not in play, or that is on a base that has just been scored, into the discard pile. It comes from your hand unless it says otherwise.</li>
+<li><b>Draw from</b>: "Draw X from Y", means "Search Y for X, reveal it, draw it, and shuffle your deck if it was searched.</li>
+<li><b>Duel</b>: This starts a conflict between two minions where their controllers can each play an action card, and the higher-power minion wins. (See <a href="#duel">Duels</a> for details.)</li>
+<li><b>During a Turn</b>: At any point of a turn, in any phase. (Compare to "On your turn".)</li>
+<li><b>End of a Turn</b>: The phrase "end of the turn" means the end of the current player's turn; "end of your turn" means the end of your current turn if you are the current player, or the end of your upcoming turn if you are not the current player.</li>
+<li><b>Extra</b>: An extra minion or action is one that is not counted against your normal limit of one per type per turn. If an ability gives you an extra card during the Play Cards phase, you may choose to wait and play it later in that phase, unless it was given by a Special ability, or a later part of the ability depends on playing the card (e.g. Lasagna Party), or if it refers to a specific card (e.g. MYAAAH!). Generic extra cards are optional, specific ones are not. An extra card with constraints (e.g. a minion of power 2 or less) is not a specific card and can be played later, or not at all. Monsters also do not count toward the quota.</li>
+<li><b>Have</b>: To "have" a card or power at a base means you control it.</li>
+<li><b>Here</b>: "Here" refers to the base that the card is at, or to the base itself if a base says "here". "Move a card here" means "move a card to here" unless another destination is specified.</li>
+<li><b>Ignore an Ability</b>: Ignoring a base's ability means: you do not follow a base's instructions, you are not subject to its restrictions, and your cards are neither affected nor protected by its ability.</li>
+<li><b>In Play</b>: Cards in play are in the middle of the table, i.e. an active base or any card on it or at it, or in stasis. Cards are in play once they hit the table, even before their ability is resolved. Cards in the hand, deck, or discard pile, or set aside, or in the box, are not in play.</li>
+<li><b>May</b>: The phrase "You may do X" means you are allowed to do X, but are not required to do X. "You may do X and Y" means you either do both X and Y, or neither X nor Y; you cannot opt to do just one of them.</li>
+<li><b>Minion</b>: Any minion in play, unless stated otherwise.
+<br>Exception: "Play a minion" means one from the hand.</li>
+<li><b>Minion [Label]</b>: A Minion ability is the part of a fusion's abilities that is resolved if and only if it is played as a minion.</li>
+<li><b>Modifier</b>: An action that is played on a card of a specific typed (e.g. base or character). The modifier stays with the card it is attached to until that card leaves play, or the modifier is moved or removed from play. The modifier is controlled by the person who played it, even if it is played on or moved to a character with a different controller. You don't need any characters at a base to play a base modifier there or use its ability, unless the card says otherwise.
+<br>A card that says "Base/Character modifier" is the same as one that says "Play on a base/minion". A card that refers to actions played on bases or minions also refers to modifiers, and vice versa.</li>
+<li><b>Move</b>: This lets you relocate a minion or buried card or titan from one base to another, along with any cards or counters on or under it. Moving a card does not count as playing it, and doesn't change its controller. On-play (i.e. unlabeled) abilities do not trigger when you move a card, but Ongoing, Special, and Talent abilities still have their effects.
+<br>
+<em>Everything that refers to moving a modifier or power counter in Marvel or Disney Edition also refers to transferring an action or power counter in other sets, and vice versa.</em></li>
+<li><b>On your turn</b>: This means during the normal Play Cards phase of your turn. You can only do it once per turn unless it says otherwise.</li>
+<li><b>Ongoing</b>: Ongoing abilities are active for as long as they're in play, having either a continuous effect or a repeatable trigger. They do not work from the hand, deck or discard pile.</li>
+<li><b>OR</b>: "X OR Y", with "OR" typeset in all capitals, means the controller chooses either X or Y to happen, but cannot choose both.</li>
+<li><b>Other Players</b>: Everyone except "you."</li>
+<li><b>Owner</b>: The player who had the card at the start of the game. Monsters and treasures have no owner.</li>
+<li><b>Place</b>: This lets you relocate a card in a way not covered by other terms (play, move, return), such as from a base to the bottom of your deck, or from the discard pile to your hand. It also lets you put power and stasis counters on a card.</li>
+<li><b>Play</b>: You play a card when it's one of the free cards you get in the Play Cards phase, or any time an ability specifically says that you're playing it. A monster is also played when required by a base newly in play. A card's On-play (i.e. unlabeled) ability happens when you play it. When cards are moved, placed, returned, or transferred, they're not being played, and their abilities don't happen. Unless it says otherwise, monsters are played from their deck, and all other cards from the players' hands.</li>
+<li><b>Player's abilities</b>: The abilities on the cards the player controls. This includes minions, actions, and titans, but not cards the player doesn't control like bases or monsters. Players do not have abilities for themselves, separate from their cards.</li>
+<li><b>Printed Power</b>: The number physically printed on the card. The printed power is also the starting power of a card, unless an ability changes it.</li>
+<li><b>Return</b>: This means that a card goes back where it came from. When a card returns from a base, discard attachments on that card, and put it in its owner's hand.</li>
+<li><b>Same Name</b>: A group of one or more cards that all have identically matching card titles. Two or more Ninja Acolytes are such a group, but partial matches like a Ninja Acolyte / Ninja Master do not count. A single card always counts as a group of cards with the same name.</li>
+<li><b>Special</b>: Special abilities happen at unusual times or in unusual ways, triggering in your hand or discard pile, or while in play for special events, even during other players' turns. A card's ability will describe how it can be used. If you use a Special ability to play a card on your turn, it doesn't count as one of your free cards for that turn. If a Special must be played when its conditions don't allow it, it is discarded instead.</li>
+<li><b>Standard</b>: A standard action is one that does not remain in play by being played on a base or on a minion, or by being buried or placed in stasis. It does its job and is discarded, or places itself in a hand or deck.</li>
+<li><b>Starting</b>: The power of a minion, or the breakpoint of a base, before being modified by other abilities (or by monsters for breakpoints). Normally this is the number printed on the minion or base, but some cards can change it.</li>
+<li><b>Swap</b>: This lets you have two cards trade locations, leaving attachments behind.</li>
+<li><b>Talent</b>: This is an ability that you may use once during the Play Cards phase of each of your turns. You don't have to use it if you don't want to.</li>
+<li><b>There</b>: The location just referred to on the card.</li>
+<li><b>This</b>: "This" usually refers to the card itself. If it refers to a different type of card (e.g. a minion with the text "this base"), then it means the card of that type that it is played on; in such cases, "this" has no meaning on a card that is not in play.</li>
+<li><b>To</b>: Some cards say, "Do X to do Y" (e.g. "Discard cards equal to a minion's power to destroy it.") With these cards, if X gets thwarted for any reason (e.g. you don't have enough cards in hand), then you can't do any of X, or Y, either. If you do X for one card, it does not count for a different card that requires X; you have to do X a separate time for each "to" ability.</li>
+<li><b>Transfer</b>: This lets you relocate actions or power counters from one card to another. When adding counters to your cards (from the pool), or discarding counters from your cards (to the pool), that's not transferring. If the target of the transfer is immune to effects, the transferred card or token is discarded instead.
+<br>
+<em>Everything that refers to moving a modifier or power counter in Marvel or Disney Edition also refers to transferring an action or power counter in other sets, and vice versa.</em></li>
+<li><b>Uncover</b>: This lets you turn a buried card face up and play it. (See <a href="#burying">Burying</a> for details.) </li>
+<li><b>Undead</b>: A class of monster affected by cards like Poultrygeist, Turners and Whack-A-Ghoul. If it isn't labeled "Undead", it isn't undead for this purpose, even if its faction might seem so (e.g. Zombies, Ghosts, Vampires).</li>
+<li><b>When</b>: "When scoring" means when VPs are awarded. Otherwise "When X do Y" means as X starts to happen, often because Y changes how X works.</li>
+<li><b>While</b>: In general, "while X" means as long as X is true. "While scoring" means any time during the Score Bases phase, from the moment the base is chosen to score until it is discarded and replaced by a new base.</li>
+<li><b>You</b>: On a minion, action, or titan, "you" means the controller of the card; on a base it means any player it describes, which is usually the current player.</li>
+<li><b>Your</b>: When referring to cards in play, this means cards you control, whether or not you own them.</li>
+
+<h2 id="detailedRules">Detailed Rules for Cards, Abilities, and Other Wackiness</h2>
+<p>This is where we explain how to resolve corner cases and special situations.</p>
+<h3 id="calcbp">Calculating Values for Breakpoints or Power</h3>
+<ol>
+	<li>The printed value is the number printed on it, unless an ability specifically changes it (e.g. Matrix of Bossiness, Let's Finish This).</li>
+	<li>The starting value is the printed value, unless an ability resets it to a specific number (e.g. Overgrowth, Mimic). If more than one ability tries to reset the same number, the current player chooses one and the others are ignored.</li>
+	<li>All abilities and other effects that adjust the value up or down – e.g. "gains +X", "reduced by Y", power counters, monsters on bases – add to or subtract from the starting value.</li>
+	<li>If the final value is less than zero, raise it up to zero.</li>
+</ol>
+
+<h3 id="cancel">Canceling or Preventing Effects</h3>
+<p>You can play a card even if its ability can't or doesn't happen. For example, you can play an action that destroys a minion even if no minions are in play, or if the minion you choose is immune to destruction.</p>
+<p>If an ability affects multiple targets, resolve that effect on each target separately. For example, if several minions are destroyed by one action card, and one of those minions is immune, it survives the destruction while all the other minions are destroyed.</p>
+<p>If ability X protects a minion from card effects when the minion's power is within a certain range (e.g. "power 2 or less"), and ability Y changes that minion's power to a value within that range (e.g. "-1 power" on a 3-power minion), then the power change takes precedence over the protection. The change is what makes the minion fall in the protected range, so that effect is allowed despite the apparent protection.</p>
+
+<h3 id="conflict">Conflicting Text & Timing</h3>
+<p>Sometimes, card text and rules text will conflict. When there's a fight, card text wins. So there's an invisible "unless stated otherwise" with every rule in this book. <strong>Exception</strong>: Minion power, base breakpoint, and VP rewards are never reduced below zero.</p>
+<p>If cards conflict, the one that says you can't do something beats the one that says you can.</p>
+<p>If a card refers to a superlative, e.g. "the highest power here", then ties for that superlative all count.</p>
+<p>If multiple effects would happen at the same time, the player whose turn it is chooses the order. If a single effect affects multiple players, the order starts with the current player and goes clockwise.</p>
+<p>If several players can play a card simultaneously (e.g. a Special when a base is chosen to score), or if several players can use the abilities of the same card (e.g. tied winners at a base), the priority goes to the current player first, then around the table clockwise.</p>
+
+<h3 id="dds">Decks, Discards, and Searches</h3>
+<p>If your hand is empty at other times of the game, you don't get an automatic draw; you have to wait for the Draw 2 Cards phase of your turn.</p>
+<p>If a deck is empty when you need to start drawing, searching for, revealing, or looking at cards from it, then shuffle its discard pile to make the new deck, and keep going. You also shuffle the discard pile if the deck runs out in the middle of drawing, revealing, or looking for cards – but not when searching.
+<br><strong>Exception</strong>: If you are revealing cards until a condition is fulfilled (e.g. until an action is revealed), then if the deck runs out first, stop revealing and move on with the rest of the ability.</p>
+<p>Drawing and revealing always start at the top of the deck or discard pile.</p>
+<p>Anyone may look through any discard pile at any time. If you take a card out of the discard pile, show it to everyone.</p>
+<p>If you "look" at a card, show it to no one else. If you "reveal" it, show it to everyone else. If you "search" a deck or discard pile for a card, or choose a card to take from the discard pile, you must reveal the card chosen. After searching a deck, it must be shuffled.</p>
+
+<h3 id="extra">Extra Cards</h3>
+<p>An extra card is one played in excess of the quota of one per card type (minion or action) per turn. Cards you play outside the Play Cards phase of a turn are counted as extra cards.</p>
+<p>Extra cards must be played during the phase they are granted (usually the Play Cards phase).</p>
+<p>An extra card can, and in some cases must, be played before the normal quota card is played.</p>
+<p>Some extra card plays granted may be held in reserve until later in the phase. These are the generic ones (e.g. "play an extra minion") that are granted by a non-Special ability during your Play Cards phase.</p>
+<p>Generic extra cards are optional, specific ones (e.g. a card from the discard pile, or revealed from the deck) are not. An extra card with constraints (e.g. a minion of power 2 or less) is not a specific card and can be played later, or not at all.</p>
+<p><b>Timing</b>: You may always play an extra card immediately. You must play an extra card immediately or not at all if:
+<ul>
+	<li>the extra card play is granted outside your Play Cards phase (e.g. "When a base scores…"), or</li>
+	<li>the extra card play is given by a Special ability, or </li>
+	<li>a later part of the extra card play ability depends on playing the card (e.g. giving +1 power to an extra minion), or</li>
+	<li>the extra card play ability refers to a specific card.</li>
+</ul>
+</p>
+
+<h3 id="inAndOut">In and Out of Play</h3>
+<p>When a card that others can see goes to the hand, deck, or discard pile, it goes to the one belonging to the card's owner (i.e., the player whose deck the card came from), no matter who played or controlled it. However, if no one else can see the card, these restrictions are lifted. You can place a card from your hand atop your deck even if you don't own it, for example, since no one can see whose it is. <strong>Exception</strong>: monsters and treasures always go to their respective discard piles.</p>
+<p>When a card leaves play, any cards or counters on it or under it are discarded. This includes bases: no card on a base leaving play may stay for its replacement unless explicitly allowed.</p>
+<p>When a card leaves play there is no memory of its previous status, so that even if it is replayed in the same turn it is treated as a new card, not the same card.</p>
+<p>The power of a minion not in play is only the number printed on it, but once in play its power includes all modifications. See <a href="#calcbp">Calculating Values for Breakpoints or Power</a>.</p>
+
+<h3 id="multipleEffect">Multiple Effects</h3>
+<p>Multiple parts of a card's ability must be done in their stated order, unless it says otherwise.</p>
+<p>If an ability lists multiple effects conditionally (examples: "If X, Y" or "Do X to do Y" or "When X, Y" or "Each time X, Y" or "After X, Y"), then if you do X, you must do Y. In addition, effect X must happen for effect Y to happen. If you can't do all of X, then you are not allowed to do part of it, (for example, discarding some cards lower than the amount you were supposed to); and if X does not fully occur, you cannot do Y.</p>
+<p>If an ability lists multiple effects independently (e.g. "Do X then Y" or "Do X and do Y" or "Do X. Do Y."), then you must do both X and Y if you can, in that order. If you cannot do one, you must still do the other.</p>
+<p>Abilities that say "Do X until Y" (e.g. "Each of your minions gains +1 power until the end of the turn") only affect the cards currently in play, not those played after that ability triggers, but their effect lasts until Y even if the card that caused it leaves play or moves away, or even if any precondition stops being true.</p>
+<p>Abilities that say "Until Y do X" (e.g. "Until the end of the turn, cancel the abilities of all cards on the base"), and Ongoing abilities with no time limit (e.g. "Ongoing: All your minions here have +1 power") do affect cards that are played or moved there later, and do not affect cards moved away.</p>
+
+<h3 id="triggered">Triggered and Tagged Abilities</h3>
+<p>Specials can be played at any time they are applicable, even on other players' turns.</p>
+<p>If an event happens that triggers an ability, that single event triggers any and all such cards. But any card can be used only once per trigger. If the trigger is something like "on/during your turn", you can use it at most once per your turn.</p>
+<p>For cards with a trigger for their effect – e.g. "After X happens" – the effect is done each time X happens, even if multiple Xs happen at the same time.</p>
+<p>Abilities can trigger at one point of time but take effect later. E.g. cards that say "after X do Y" trigger when X starts, but don't take effect until after X ends.</p>
+<p>If a timing label (Ongoing, Special, Talent) appears in an ability description, that label applies to all text that follows the label up to the end of the description, or to another label (if there is one). Text that precedes a label, and text without a label, are normal on-play ability effects that take place instantly when played.</p>
+
+<h3 id="usingAbilities">Using Card Abilities</h3>
+<p>On-play (i.e. unlabeled) abilities, and Ongoing abilities with no specified timing, are resolved immediately after playing the card. Ongoing and Special abilities with a trigger (before/when/after/if X) are only resolved when X happens. Talents and Ongoing abilities that say "on your turn" may be chosen to be resolved once per your Play Cards phase.</p>
+<p>When you resolve an ability you must follow all its instructions even if it's bad for you. <strong>Exception</strong>: Talents and generic extra cards are optional, as are abilities that say you "may" do something.</p>
+<p>If you cannot do everything an ability makes you do (e.g. discard a certain number of cards), do as much as you can.</p>
+<p>If an ability says "any number," you may choose one, or even zero. You may play a card that says "all" even if there are no targets.</p>
+<p>If no limit is specified in the rules or on the card, there is no limit. For example, there is no limit to the number of cards that can be played on a base or on a minion; and while an ability only resolves once per trigger, there is no limit to the number of triggers it can respond to unless it says otherwise.</p>
+<p>On-play abilities happen when you play a card from your hand, or any time a card says "play." When minions just move around, that's not playing them.</p>
+<p>If not stated (on the card or in the rules), the effects of an ability expire at the end of the turn, or when its card leaves play, whichever is sooner. An Ongoing ability ends when its card leaves play, unless the ability stated another expiration time, like the end of the turn. Abilities that grant control of another card last while the controlled card is in play, or until another ability changes its control.</p>
+
+<h2 id="bigBase">Big Base Playing Mode</h2>
+<p>In Big Base mode, everyone plays only on one Big Base.</p>
+<p>No breakpoint is used for scoring; instead, after a certain number of <strong>ROUNDS</strong> of turns the Big Base scores, and VPs are awarded according to the total power each player has on the entire base. Then all the cards in play are discarded, and the whole thing is done two more times, for a total of three scoring <strong>PERIODS</strong>.</p>
+<p>In Big Base mode all Smash Up rules are in effect except where noted below. The biggest changes are in <strong>bold</strong>.</p>
+
+<h3>Setup</h3>
+<p>Place the Big Base board in the center of the table.</p>
+<p>Place spare VP tokens on the "1" space of the Current Round and Scoring Period tracks.</p>
+<p>Prepare the base deck normally, and place the top card face up on the designated space of the board. <strong>The base card is changed each round, and only its ability is used</strong>; ignore its breakpoint and VP rewards. Turn the top card of the base deck face up, so players can plan for what is coming the next round.</p>
+<p>Choose a player to go first and give them a First Player token.</p>
+
+<h3>Play Sequence</h3>
+<p><strong>A player's turn only has the phases Start Turn and Play Cards</strong>. Scoring the base and drawing cards happen later, and end of turn events are now treated as end of round events, as described below. Each turn ends after the Play Cards phase even with no End Turn phase.</p>
+<p>The steps of a round are:
+	<ol>
+	<li><b>Player turns</b>: Starting with the First Player, each player takes a turn as described above.</li>
+	<li><b>Scoring</b>: If it is the last round of the scoring period, the base is scored as described below. Each period has 3 rounds.</li>
+	<li><b>Draw 2 cards</b>: Each player draws 2 cards, starting with the First Player, and discards down to 10 cards in hand.</li>
+	<li><b>End Round</b>: "At the end of the turn" abilities are resolved. "Until end of turn" abilities cease. Discard the current base card, replace it with the top card of the base deck, and turn its new top card face up. Then, if it is the last round of the period, move the Current Round token back to 1, advance the Scoring Period token one space, and <strong>give the First Player token to the new First Player, who is the player with the current lowest total power</strong>; otherwise advance the Current Round token to the next space.</li>
+	</ol>
+</p>
+<p>The steps of scoring are as in normal Smash Up with these differences:
+	<ul>
+		<li>There is no need to check breakpoints or choose which base to score.</li>
+		<li>The VPs awarded are according to the scoring period, as listed on the board, including VPs for the highest, 2nd highest, 3rd highest, and 4th highest total power on the Big Base. 1 VP is also awarded to the player with the most power on each side. Ties are broken normally.</li>
+		<li>After awarding VPs, all cards in play are then discarded, except those allowed to remain or go elsewhere because of an ability.</li>
+	</ul>
+</p>
+<p><strong>During scoring, it is no player's turn</strong>. For timing resolution, treat the First Player as the current player when it is no one's turn.</p>
+
+<h3>Playing on The Big Base</h3>
+<p>The Big Base board has four sides (North, South, East, West), and three slots on each side. <strong>A card played on the base is played on one of the slots. A player may not have cards on more than one slot per side, and each slot may only have cards from one player.</strong> This includes minions, titans, actions played on bases, and buried cards. If you play or move a card to a side where you already have cards, it must be to the slot you have them on.
+<br><b>Exception</b>: Actions may still be played on other players' minions in slots you don't occupy.</p>
+<p>Each slot has an ability that is used by the player with cards on it. <strong>A slot ability that says "On occupation" is triggered only when a card is played on a slot or moved or transferred to it while it is empty.</strong> Playing or moving cards to it while it has cards on it does not trigger it again.</p>
+<p>All sides and slots are available for play no matter how many players there are. No matter what side you play a card on, you should turn it to face you, to make it easy to tell it's yours. <strong>In 4-player games, you may consider each side to have a virtual 4th slot (that has no ability), so each player may always play on each side.</strong></p>
+
+<h3>Card Abilities on The Big Base</h3>
+<p><strong>As far as cards' abilities are concerned, a "base" as a location is one side of the Big Base and the slots in it.</strong> "Here" means the side the card is on; two cards in different slots of the same side are considered on the same base, while those in slots on different sides are not. Abilities that affect base <em>cards</em> don't affect sides or slots.</p>
+<p>When you move or transfer a card to another base, it must be to a different side of the board, not to a different slot of the same side. The controller of the moved card chooses which slot it occupies, if they don't already occupy a slot there.</p>
+<p>If the control of a card changes, it must be transferred to the new controller's slot on that side, if they have cards there. If they don't, they choose which slot they go to. An uncovered card that is played on a base is played on the same slot it was buried on.</p>
+<p><strong>Abilities that <em>happen</em> at the end of a turn happen at the end of the round in Big Base mode. Abilities that <em>last</em> until the end of the turn last until the end of the round instead.</strong></p>
+
+<h3>Base Card Abilities</h3>
+<p><strong>During play, each side is considered to have the ability of the current base card.</strong> It works separately for each side; it's possible all 4 sides will respond to the same trigger.</p>
+<p>If an ability affects a base or plays a card to a base, choose one side to be the target. If it changes the base card, then necessarily each side will have the new base card's ability. If it plays an extra base, it replaces the current base instead. If it plays a minion to the new base, choose a side to play it to.</p>
+<p>A base ability triggered by scoring has no effect if it's not in play during the last round of a period.</p>
+<p>If a base's ability would be unfun or unfair to most players, you may agree to discard it and play the next base card instead.</p>
+
+<h3>Useless Abilities</h3>
+<p>At the start of the game and after any time you draw cards, you may reveal any cards in your hand that have no effect in Big Base mode, and if others agree they are useless, you may discard them and draw to replace them.</p>
+<p>Cards with power are never useless. Abilities that affect breakpoints are useless, unless you have factions affected by breakpoints, in which case each side has its starting breakpoint equal to that of the current base card.</p>
+
+<h3>Ending the Game</h3>
+<p>After awarding VPs at the end of period 3, the player with the most total VPs wins the game. If there is a tie, continue playing, but do not discard the cards from the board. Play one more round of turns, and then award VPs as if it were Period 1. Repeat this process until there is a winner.</p>
+
+<h3>Adapting to Big Base Mode</h3>
+<p>Not all factions work well in Big Base mode, and that's okay. Choose factions you think will work well. Or if you want, feel free to adapt the rules or the cards so that they can work in Big Base mode.</p>
+<p>If you come across a situation not covered in these rules, work out a solution that satisfies you all. As always, use common sense, fairness, and a sense of humor!</p>
+</body>
+</html>
